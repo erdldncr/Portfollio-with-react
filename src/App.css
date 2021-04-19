@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header{
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  align-items: center;
+  background-color: black;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
+  border: 1px solid #ffffff;
+  width: 70%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: stretch;
+  text-align: center;
+}
+.context{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+ 
+  font-size: 1.5rem;
+  align-items: center;
+
+}
+.image-container{
+  padding: 10%;
+}
+.link-container{
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  justify-content: center;
+  align-items: stretch;
+}
+.link-container li{
+  margin-bottom: 10%;
+  font-size: 2rem;
+  margin: 10%;
+
+}
+.link-container li a{
+  text-decoration: none;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.image-container img{
+  max-width: 100%;
+  border-radius: 50%;
+  
+}
+.toggle-btn{
+  position: absolute;
+  top: 10px;
+  right:10px;
+  font-size: 3rem;
+  color: crimson;
+  animation: glowing 2300ms infinite;
+  display:none;
+}
+.toggle-btn:hover{
+  
+  animation: none;
+}
+.dark{
+  color: #fff;
+}
+.light{
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+
+@media only screen and (max-width: 1000px) {
+  .context{
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  nav{
+    width: 100%;
+  }
+  .toggle-btn{
+    display: block;
   }
 }
+
+
+
+@keyframes glowing {
+  0% {
+    color: red;
+    box-shadow: 0 0 3px #fff;
+  }
+  50% {
+    color: white;
+    box-shadow: 0 0 10px red;
+  }
+  100% {
+    color: red;
+    box-shadow: 0 0 3px #fff;
+  }
+}
+
+
