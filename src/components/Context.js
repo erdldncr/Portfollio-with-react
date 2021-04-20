@@ -1,19 +1,31 @@
-import React,{useReducer,useContext} from 'react'
+import React,{useReducer,useContext,useEffect} from 'react'
 import reducer from './reducer'
 
 const AppContext=React.createContext()
 
 const defaultState={
-    darkMode:true
+    darkMode:true,
+    smallScreen:false
 }
  const AppProvider=({children})=>{
     const [state,dispatch]=useReducer(reducer,defaultState)
 
     const toogleDarkMode=()=>{
+       
      dispatch({type:'TOGGLE_DARK_MODE'})
     }
+    const toogleSmallScreen=()=>{
+      
+        dispatch({type:'TOGGLE_SMALL_SCREEN'})
+    }
+
+   
     return <AppContext.Provider 
-    value={{...state,toogleDarkMode}} >
+    value={{
+        ...state,
+    toogleDarkMode,
+    toogleSmallScreen
+    }} >
                 {children}
             </AppContext.Provider> 
 }

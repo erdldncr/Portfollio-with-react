@@ -1,15 +1,19 @@
-
-import { Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Intro from './components/Intro';
+import Home from './components/Home'
+
 
 function App() {
   return (
     <>
-        <Intro/>
+       
         <Switch>
-
+          <Route path='/' exact component={Intro}/>
+          <Route path='/home' exact component={Home} />
         </Switch>
+       
+     
     </>
   );
 }

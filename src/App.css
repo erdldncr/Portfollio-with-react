@@ -8,7 +8,12 @@ header{
   justify-content: space-between;
   height: 100vh;
   align-items: center;
+}
+.header-dark{
   background-color: black;
+}
+.header-light{
+  background-color: #fff;
 }
 nav{
   border: 1px solid #ffffff;
@@ -25,13 +30,16 @@ nav{
   display: flex;
   flex-direction: column;
   text-align: center;
- 
   font-size: 1.5rem;
   align-items: center;
-
+  line-height: 2;
 }
 .image-container{
   padding: 10%;
+}
+.image-container img{
+  width: 250px;
+  height: 250px;
 }
 .link-container{
   max-width: 100%;
@@ -58,14 +66,26 @@ nav{
   border-radius: 50%;
   
 }
+.home-btn{
+  position: absolute;
+  top: 10px;
+  left:10px;
+  font-size: 3rem;
+  color: crimson;
+  
+}
+.home-btn:hover{
+  
+  animation: none;
+}
 .toggle-btn{
   position: absolute;
   top: 10px;
-  right:10px;
-  font-size: 3rem;
+  right:30px;
+  font-size: 2rem;
   color: crimson;
-  animation: glowing 2300ms infinite;
-  display:none;
+  
+  
 }
 .toggle-btn:hover{
   
@@ -77,11 +97,52 @@ nav{
 .light{
   color: black;
 }
+/* /////// HOME COMPONENT */
+nav{
+  border: 1px solid black;
+  padding: 5%;
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  position: relative;
 
 
 
+}
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+nav li a{
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.icon{
+  font-size: 2rem;
+  position: absolute;
+  margin-left: 75%;
+  display: none;  
+  top: 10px;
+  
+}
+.icon:hover{
+  color: red;
+  cursor: pointer;
+}
 
-@media only screen and (max-width: 1000px) {
+
+.hidden{
+  display: none;
+}
+.show{
+  display: flex;
+}
+
+@media only screen and (max-width: 700px) {
   .context{
     display: none;
   }
@@ -91,22 +152,14 @@ nav{
   .toggle-btn{
     display: block;
   }
-}
-
-
-
-@keyframes glowing {
-  0% {
-    color: red;
-    box-shadow: 0 0 3px #fff;
+  .icon{
+    display: block;
   }
-  50% {
-    color: white;
-    box-shadow: 0 0 10px red;
-  }
-  100% {
-    color: red;
-    box-shadow: 0 0 3px #fff;
+  nav ul{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 100%;
   }
 }
 
